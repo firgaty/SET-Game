@@ -1,0 +1,3 @@
+/home/firgaty/Prog/Cpp/Uni/SET2/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/firgaty/Prog/Cpp/Uni/SET2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/firgaty/Prog/Cpp/Uni/SET2/cmake-build-debug/CMakeFiles/SET2.dir
