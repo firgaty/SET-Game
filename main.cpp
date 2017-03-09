@@ -40,7 +40,7 @@ int main(int argc, char **argv)
     }
 
     Deck *deck2 = new Deck(4, 3);
-    Game(deck2, 1);
+    Game(deck2, 0);
 
     return 0;
 }

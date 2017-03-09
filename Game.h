@@ -22,18 +22,27 @@ public:
     std::deque<std::deque<int>> findSet(); // Redo it recursive.
     std::deque<std::deque<int>> findSetsInDeck();
 
-    int removeSets(std::deque<std::deque<int>> setList); // IN PROGRESS
+    int removeSets(std::deque<std::deque<int>> setList); // IN PROGRESS removes all possible sets in m_roundCards and returns how many sets were removed.
     bool removeSet(std::deque<int> set);
+
+    void setSetFound(int *setFound);
+    void setSetErased(int *setErased);
+
+    void printTab(int *tab, int size);
+    const void printRoundCards();
+    const void printSet(std::deque<int> &set);
 
 protected:
     Deck *m_deck;
     int m_rounds;
     std::deque<Card> *m_roundCards;
 
-    int m_nbSet12;
-    int m_nbSet15;
+    int *m_setFound;
+    int *m_setErased;
 
     void reset();
+    void addFound(std::deque<std::deque<int>> setList, int cardsInRound);
+    void addErased(int nbSets, int cardsInRound);
 };
 
 

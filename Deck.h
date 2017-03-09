@@ -12,7 +12,7 @@ public:
 
     // PRINT.
     const void print();
-    const void print(std::deque<Card> &set);
+    static const void print(std::deque<Card> &set);
     const void print(std::deque<int> &setPos);
 
     // FUNCTIONS TO TEST SETS.
@@ -29,6 +29,7 @@ public:
     int getAttrLength();
     std::deque<Card>* getCards();
     Card getCardAt(int i);
+
     std::tuple<Card, int> getRandCard();
 
     Card removeCard(int index);
