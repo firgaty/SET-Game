@@ -11,12 +11,16 @@ public:
 
     const void print();
 
-    std::deque<int> getAttr();
+    std::deque<int> getAttr() const;
     int getNbAttr();
+
+    bool isEqual(const Card &c) const;
 
 protected:
     int m_nbAttr;
     std::deque<int> m_attr;
 };
+
+bool operator==(const Card &a, const Card &b);
 
 #endif // CARD_H

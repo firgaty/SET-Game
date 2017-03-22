@@ -7,7 +7,8 @@
 class Deck
 {
 public:
-    Deck(int nbAttr, int attrLength);
+    Deck(int nbAttr, int attrLength, bool noCards);
+    Deck(int nbAttr, int attrLength, std::deque<Card> cards);
     ~Deck();
 
     // PRINT.
@@ -20,6 +21,8 @@ public:
     static bool isSet(std::deque<Card> &cards, int nbAttr);
     static bool allDifferent(std::deque<Card> &cards, int index);
     static bool allSame(std::deque<Card> &cards, int index);
+    bool isCardInDeck(const Card &c) const;
+    bool isSetInDeck(const std::deque<Card> &set);
 
     std::deque<std::deque<int>> findSetsInDeck();
 
@@ -33,6 +36,7 @@ public:
     std::tuple<Card, int> getRandCard();
 
     Card removeCard(int index);
+    Card removeCard(Card &c);
     void addCard(Card c);
 
 protected:

@@ -9,7 +9,7 @@ int main(int argc, char **argv)
 {
     std::cout << "Hello World" << std::endl;
 
-    Deck deck(4, 3);
+    Deck deck(4, 3, false);
 
     deck.print();
 
@@ -39,7 +39,7 @@ int main(int argc, char **argv)
         }
     }
 
-    Deck *deck2 = new Deck(4, 3);
+    Deck *deck2 = new Deck(4, 3, false);
     Game(deck2, 0);
 
     return 0;

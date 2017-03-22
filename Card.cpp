@@ -11,7 +11,7 @@ Card::~Card()
 {
 }
 
-std::deque<int> Card::getAttr() {
+std::deque<int> Card::getAttr() const {
     return this->m_attr;
 }
 
@@ -30,3 +30,17 @@ const void Card::print() {
     return;
 }
 
+bool Card::isEqual(const Card &c) const {
+    for(int i(0); i < m_nbAttr; i ++) {
+        if (m_attr.at((unsigned int) i) != c.getAttr().at((unsigned int) i)) {
+            return false;
+        }
+    }
+    return true;
+}
+
+//###############################################
+
+bool operator==(const Card &a, const Card &b) {
+    return a.isEqual(b);
+}

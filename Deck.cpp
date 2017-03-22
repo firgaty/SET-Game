@@ -3,19 +3,30 @@
 #include <tuple>
 #include <fstream>
 
-Deck::Deck(int nbAttr, int attrLength) : m_attrLength(attrLength), m_nbAttr(nbAttr)
+Deck::Deck(int nbAttr, int attrLength, bool noCards) : m_attrLength(attrLength), m_nbAttr(nbAttr)
 {
     this->m_cards = new std::deque<Card>();
-    std::deque<int> attr;
 
-    for(int i = 0; i < m_nbAttr; i++) {
-        attr.push_back(0);
+    if(!noCards) {
+        std::deque<int> attr;
+
+        for(int i = 0; i < m_nbAttr; i++) {
+            attr.push_back(0);
+        }
+
+        initCards(m_nbAttr, m_attrLength, m_nbAttr, attr);
+
+        m_nbCards = (int)m_cards->size();
+    } else {
+        m_nbCards = 0;
     }
+}
 
-    initCards(m_nbAttr, m_attrLength, m_nbAttr, attr);
-
-    m_nbCards = (int)m_cards->size();
-
+Deck::Deck(int nbAttr, int attrLength, std::deque<Card> cards) {
+    this->m_cards = new std::deque<Card>(cards);
+    this->m_nbAttr = nbAttr;
+    this->m_attrLength = attrLength;
+    this->m_nbCards = (int)m_cards->size();
 }
 
 Deck::~Deck()
@@ -116,12 +127,10 @@ bool Deck::isSet(std::deque<Card> &cards) {
 }
 
 bool Deck::isSet(std::deque<Card> &cards, int nbAttr) {
-    int i = 0;
-    while(i < nbAttr) {
+    for(int i(0); i < nbAttr; i++) {
         if(!(allSame(cards, i)) && !(allDifferent(cards, i))) {
             return false;
         }
-        i++;
     }
     return true;
 }
@@ -155,17 +164,48 @@ Card Deck::removeCard(int index) {
     return out;
 }
 
+Card Deck::removeCard(Card &c) {
+    for(int i(0); i < m_nbCards; i ++) {
+        if(c == m_cards->at((unsigned int)i)) {
+            return this->removeCard(i);
+        }
+    }
+}
+
 Card Deck::getCardAt(int i) {
     return this->m_cards->at((unsigned long)i);
 }
 
 std::tuple<Card, int> Deck::getRandCard() {
-    unsigned long i = std::rand() % this->m_cards->size();
+    int i = 0;
+
+    if(this->m_cards->size() > 0) {
+        srand((unsigned int) time(NULL));
+        i = (int) (rand() % (this->m_cards->size()));
+    }
     return  std::make_tuple(this->m_cards->at(i), i);
 }
 
+
 void Deck::addCard(Card c) {
     this->m_cards->push_back(c);
+    this->m_nbCards ++;
+}
+
+bool Deck::isCardInDeck(const Card &c) const {
+    for(int i(0); i < m_nbCards; i ++) {
+        if(c == this->m_cards->at(i)) return true;
+    }
+    return false;
+}
+
+bool Deck::isSetInDeck(const std::deque<Card> &set) {
+    for(int i(0); (unsigned int)i < set.size(); i ++) {
+        if(!isCardInDeck(set.at((unsigned int)i))) {
+            return false;
+        }
+    }
+    return true;
 }
 
 

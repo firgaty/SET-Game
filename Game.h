@@ -19,26 +19,27 @@ public:
 
     int round(int lastRound);
     bool dealCards(int nbCards); // Returns false if no more cards are left.
-    std::deque<std::deque<int>> findSet(); // Redo it recursive.
+    //std::deque<std::deque<int>> findSet(); // Redo it recursive.
     std::deque<std::deque<int>> findSetsInDeck();
 
     int removeSets(std::deque<std::deque<int>> setList); // IN PROGRESS removes all possible sets in m_roundCards and returns how many sets were removed.
-    bool removeSet(std::deque<int> set);
+    bool removeSet(std::deque<Card> &set);
 
-    void setSetFound(int *setFound);
-    void setSetErased(int *setErased);
+    void setSetFound(std::deque<int> *setFound);
+    void setSetErased(std::deque<int> *setErased);
 
     void printTab(int *tab, int size);
+    void printDeque(std::deque<int> &deque);
     const void printRoundCards();
     const void printSet(std::deque<int> &set);
 
 protected:
     Deck *m_deck;
     int m_rounds;
-    std::deque<Card> *m_roundCards;
+    Deck *m_roundCards;
 
-    int *m_setFound;
-    int *m_setErased;
+    std::deque<int> *m_setFound;
+    std::deque<int> *m_setErased;
 
     void reset();
     void addFound(std::deque<std::deque<int>> setList, int cardsInRound);
