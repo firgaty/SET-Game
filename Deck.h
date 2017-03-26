@@ -25,6 +25,7 @@ public:
     bool isSetInDeck(const std::deque<Card> &set);
 
     std::deque<std::deque<int>> findSetsInDeck();
+    std::deque<int> findSetsPerCards(int nbCardsmax); //Recursive.
 
     // GETTERS & SETTERS.
     int getNbCards();

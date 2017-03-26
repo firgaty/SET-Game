@@ -21,6 +21,13 @@ Game::Game(Deck *deck) {
     reset();
 }
 
+/**
+ * @param deck
+ * @param mode
+ * 0 : Normal SET game with a dispay of the deck.
+ * 1 : Finds all SETs in deck.
+ * 2 : Tests how many cards at least are needed to have at least 1 set amongst them.
+ */
 Game::Game(Deck *deck, int mode) {
     this->m_deck = deck;
     this->m_roundCards = new Deck(4, 3, true);
@@ -28,16 +35,17 @@ Game::Game(Deck *deck, int mode) {
 
     Tools::writeInFile("SET's TEST RESULTS :", true);
 
-    if(mode == 1) { // Where we find all sets in the deck.
-        std::deque<std::deque<int>> setList = m_deck->findSetsInDeck();
-        for(int i = 0; i < setList.size(); i++) {
-            std::cout << Tools::intToString(i) << std::endl;
-            Tools::writeInFile(Tools::intToString(i), false);
-            m_deck->print(setList.at((unsigned long)i));
+    switch (mode) {
+        case 1 : {
+            std::deque<std::deque<int>> setList = m_deck->findSetsInDeck();
+            for(int i = 0; i < setList.size(); i++) {
+                std::cout << Tools::intToString(i) << std::endl;
+                Tools::writeInFile(Tools::intToString(i), false);
+                m_deck->print(setList.at((unsigned long)i));
+            }
+            return;
         }
-        return;
-    } else if (mode == 2) {
-
+        default:;
     }
 
     round(0);
@@ -56,9 +64,11 @@ void Game::reset() {
 
     std::deque<int> *setFound = new std::deque<int>(10, 0);
     std::deque<int> *setErased = new std::deque<int>(10, 0);
+    std::deque<int> *nbRoundPerCards = new std::deque<int>(10, 0);
 
     setSetFound(setFound);
     setSetErased(setErased);
+    setNbRoundPerCards(nbRoundPerCards);
 }
 
 int  Game::round(int lastRound) {
@@ -78,12 +88,16 @@ int  Game::round(int lastRound) {
     } else { // if less than 3 cards left, stop.
         return lastRound;
     }
+    if(end) return lastRound;
+
 
     printRoundCards();
+    int cardsInRound =  this->m_roundCards->getNbCards();
+    addNbRoundPerCards(cardsInRound);
 
+    if(cardsInRound != 0) {}
     // 2) find sets.
     std::deque<std::deque<int>> setList = m_roundCards->findSetsInDeck();
-    int cardsInRound =  this->m_roundCards->getNbCards();
     addFound(setList, cardsInRound);
 
 
@@ -92,7 +106,6 @@ int  Game::round(int lastRound) {
 
 
     // Do it again.
-    if(end) return lastRound;
     return round(lastRound + 1);
 }
 
@@ -110,33 +123,6 @@ bool Game::dealCards(int nbCards) {
 
     return true;
 }
-
-//std::deque<std::deque<int>> Game::findSet() {
-//    std::deque<Card> set;
-//    std::deque<std::deque<int>> setList;
-//    for(int i = 0; i < m_roundCards->size() - 2; i++) {
-//        set.push_back((Card &&) m_roundCards->at((unsigned long)i));
-//        for(int j = i + 1; j < m_roundCards->size() - 1; j++) {
-//            set.push_back((Card &&) m_roundCards->at((unsigned long)j));
-//            for(int k = j + 1; k < m_roundCards->size(); k++) {
-//                set.push_back((Card &&) m_roundCards->at((unsigned long)k));
-//                if(Deck::isSet(set, m_deck->getNbAttr())) {
-//                    std::deque<int> setPos;
-//                    setPos.push_back(i); setPos.push_back(j); setPos.push_back(k);
-//                    setList.push_back(setPos);
-//                }
-//                set.pop_back();
-//            }
-//            set.pop_back();
-//        }
-//        set.pop_back();
-//    }
-//    std::cout << "SETs found :" << std::endl;
-//    for(int i; i < setList.size(); i++) {
-//        printSet(setList.at(i));
-//    }
-//    return setList;
-//}
 
 std::deque<std::deque<int>> Game::findSetsInDeck() {
     std::deque<Card> set;
@@ -174,7 +160,7 @@ int Game::removeSets(std::deque<std::deque<int>> setList) {
     }
 
     int out (0);
-    // Check if the cards are still in the m_roundCards and erase them.
+    // Check if the cards are still in the m_roundCards and erase them.q
     for(int i(0); i < cardList.size(); i++) {
         if(removeSet(cardList.at((unsigned int)i))) {
             std::cout << "Set in deck\n";
@@ -187,7 +173,18 @@ int Game::removeSets(std::deque<std::deque<int>> setList) {
     return out;
 }
 
+int Game::findSetsPerCards(int nbIteration, int nbCards, int foundSets) {
+    for(int i(nbIteration); i < m_deck->getNbCards() - (nbCards - nbIteration); i++) {
+        m_roundCards->addCard(m_deck->getCardAt(i));
+        if(m_roundCards->getNbCards() == nbCards) {
+            m_setFoundPerNbCards->at((unsigned int) nbCards) = (int) m_roundCards->findSetsInDeck().size();
+            m_differentCards->at((unsigned int) nbCards) ++;
 
+        }
+        return findSetsPerCards(nbIteration + 1, nbCards, foundSets);
+    }
+    m_roundCards->removeCard(m_roundCards->getNbCards() - 1);
+}
 
 void Game::setSetFound(std::deque<int> *setFound) {
     this->m_setFound = setFound;
@@ -196,14 +193,21 @@ void Game::setSetFound(std::deque<int> *setFound) {
 void Game::setSetErased(std::deque<int> *setErased) {
     this->m_setErased = setErased;
 }
+void Game::setNbRoundPerCards(std::deque<int> *nbRoundPerCards) {
+    this->m_nbRoundPerCards = nbRoundPerCards;
+}
 
 void Game::addFound(std::deque<std::deque<int>> setList, int cardsInRound) {
-    this->m_setFound->at(cardsInRound / 3) += setList.size();
+    this->m_setFound->at((unsigned int) cardsInRound / 3) += setList.size();
 }
 
 void Game::addErased(int nbSets, int cardsInRound) {
-    this->m_setErased->at(cardsInRound / 3) += nbSets;
+    this->m_setErased->at((unsigned int) cardsInRound / 3) += nbSets;
 
+}
+
+void Game::addNbRoundPerCards(int cardsInRound) {
+    this->m_nbRoundPerCards->at((unsigned int) cardsInRound / 3) += 1;
 }
 
 void Game::printTab(int *tab, int size) {
@@ -244,3 +248,27 @@ void Game::printDeque(std::deque<int> &deque) {
     }
 }
 
+std::deque<int>* Game::getNbRoundPerCards() {
+    return this->m_nbRoundPerCards;
+}
+
+std::deque<int>* Game::getSetErased() {
+    return this->m_setErased;
+}
+
+std::deque<int>* Game::getSetFound() {
+    return this->m_setFound;
+}
+std::deque<int>* Game::getDifferentCards() {
+    return this->m_differentCards;
+}
+std::deque<int>* Game::getSetFoundPerNbCards() {
+    return this->m_setFoundPerNbCards;
+}
+
+void Game::setDifferentCards(std::deque<int> *setter) {
+    this->m_differentCards = setter;
+}
+void Game::setSetFoundPerNbCards(std::deque<int> *setter) {
+    this->m_setFoundPerNbCards = setter;
+}

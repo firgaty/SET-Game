@@ -63,6 +63,8 @@ fstream
 /home/firgaty/Prog/Cpp/SET-Game/Tools.h
 iostream
 -
+deque
+-
 
 /home/firgaty/Prog/Cpp/SET-Game/main.cpp
 iostream

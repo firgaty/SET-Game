@@ -29,3 +29,9 @@ void Tools::writeInFile(std::string s, bool eraseFile) {
     }
 
 }
+
+void Tools::addDeque(std::deque<int> *a, std::deque<int> *b) {
+    for(int i(0); i < a->size(); i++) {
+        a->at(i) += b->at(i);
+    }
+}
