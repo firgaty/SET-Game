@@ -42,9 +42,9 @@ public:
     std::deque<bool>* getIsSetPerCards();
 
     void printTab(int *tab, int size);
-    void printDeque(std::deque<int> &deque);
-    void printDeque(std::deque<int> &deque, int range);
-    void printDeque(std::deque<bool> &deque, int range = (int) deque.size());
+    void printDeque(std::deque<int> &deque); // Use it ONLY when making stats on a real game
+    void printDeque(std::deque<int> &deque, int range); // Else this one.
+    void printDeque(std::deque<bool> &deque, int range = 25);
     const void printRoundCards();
     const void printSet(std::deque<int> &set);
 
@@ -52,6 +52,7 @@ protected:
     Deck *m_deck;
     int m_rounds;
     Deck *m_roundCards;
+    int iter = 0;
 
     std::deque<int> *m_setFound;
     std::deque<int> *m_setErased;

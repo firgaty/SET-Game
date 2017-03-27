@@ -46,9 +46,12 @@ Game::Game(Deck *deck, int mode) {
             return;
         }
         case 2 : {
+            iter = 0;
             for(int i(0); i < 25; i ++) {
                 m_setFoundPerNbCards->at((unsigned int)i) = this->findSetsPerCards(i);
             }
+            this->printDeque(*m_isSetPerCards, 25);
+            this->printDeque(*m_setFoundPerNbCards, 25);
         }
         default:;
     }
@@ -208,6 +211,8 @@ int Game::findSetsPerCards(int nbIteration, int nbCards, int foundSets) {
 //    m_roundCards->removeCard(m_roundCards->getNbCards() - 1);
 
     for(int i(nbIteration); i < m_deck->getNbCards() - (nbCards - nbIteration); i ++) {
+        iter ++;
+        std::cout << iter << std::endl;
         m_roundCards->addCard(m_deck->getCardAt(i)); // add a card.
         if(m_roundCards->getNbCards() == nbCards) { // Check if we have the number of cards desired
             foundSets += m_roundCards->findSetsInDeck().size(); // add the number of sets found.

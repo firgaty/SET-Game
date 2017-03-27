@@ -74,6 +74,16 @@ int main(int argc, char **argv)
 //    }
 
     Deck *deck4 = new Deck(4,3,false);
+    Game game2(deck4, 2);
+    std::deque<float> moyenne(25, 0.0);
+
+    std::cout << "MOYENNES : \n\n";
+    for(int i(0); i < game2.getDifferentCards()->size(); i++) {
+        moyenne.at(i) = (float) game2.getSetFoundPerNbCards()->at(i) / (float) game2.getDifferentCards()->at(i);
+    }
+    for(int i(0); i < moyenne.size(); i++) {
+        std::cout << "Moyenne " << i << " cartes : " << moyenne.at(i) << std::endl;
+    }
 
     return 0;
 }
