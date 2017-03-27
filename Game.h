@@ -29,17 +29,22 @@ public:
     void setNbRoundPerCards(std::deque<int> *nbRoundPerCards);
     void setSetFoundPerNbCards(std::deque<int>* setter);
     void setDifferentCards(std::deque<int>* setter);
+    void setIsSetPerCards(std::deque<bool>* setter);
 
     int findSetsPerCards(int nbIteration, int nbCards, int setsFound);
+    int findSetsPerCards(int nbCards);
 
     std::deque<int>* getSetFound();
     std::deque<int>* getSetErased();
     std::deque<int>* getNbRoundPerCards();
     std::deque<int>* getSetFoundPerNbCards();
     std::deque<int>* getDifferentCards();
+    std::deque<bool>* getIsSetPerCards();
 
     void printTab(int *tab, int size);
     void printDeque(std::deque<int> &deque);
+    void printDeque(std::deque<int> &deque, int range);
+    void printDeque(std::deque<bool> &deque, int range = (int) deque.size());
     const void printRoundCards();
     const void printSet(std::deque<int> &set);
 
@@ -53,7 +58,7 @@ protected:
     std::deque<int> *m_nbRoundPerCards;
     std::deque<int> *m_setFoundPerNbCards;
     std::deque<int> *m_differentCards;
-    std::deque<bool> *m_isSetPerCards;
+    std::deque<bool> *m_isSetPerCards; //Is there ALWAYS a set for index nb of cards ?
 
     void reset();
     void addFound(std::deque<std::deque<int>> setList, int cardsInRound);

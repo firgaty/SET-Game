@@ -4,11 +4,11 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/firgaty/Prog/Cpp/SET-Game/Card.cpp" "/home/firgaty/Prog/Cpp/SET-Game/cmake-build-debug/CMakeFiles/SET2.dir/Card.cpp.o"
-  "/home/firgaty/Prog/Cpp/SET-Game/Deck.cpp" "/home/firgaty/Prog/Cpp/SET-Game/cmake-build-debug/CMakeFiles/SET2.dir/Deck.cpp.o"
-  "/home/firgaty/Prog/Cpp/SET-Game/Game.cpp" "/home/firgaty/Prog/Cpp/SET-Game/cmake-build-debug/CMakeFiles/SET2.dir/Game.cpp.o"
-  "/home/firgaty/Prog/Cpp/SET-Game/Tools.cpp" "/home/firgaty/Prog/Cpp/SET-Game/cmake-build-debug/CMakeFiles/SET2.dir/Tools.cpp.o"
-  "/home/firgaty/Prog/Cpp/SET-Game/main.cpp" "/home/firgaty/Prog/Cpp/SET-Game/cmake-build-debug/CMakeFiles/SET2.dir/main.cpp.o"
+  "/home/firgaty/Prog/Projects/SET-Game/Card.cpp" "/home/firgaty/Prog/Projects/SET-Game/cmake-build-debug/CMakeFiles/SET2.dir/Card.cpp.o"
+  "/home/firgaty/Prog/Projects/SET-Game/Deck.cpp" "/home/firgaty/Prog/Projects/SET-Game/cmake-build-debug/CMakeFiles/SET2.dir/Deck.cpp.o"
+  "/home/firgaty/Prog/Projects/SET-Game/Game.cpp" "/home/firgaty/Prog/Projects/SET-Game/cmake-build-debug/CMakeFiles/SET2.dir/Game.cpp.o"
+  "/home/firgaty/Prog/Projects/SET-Game/Tools.cpp" "/home/firgaty/Prog/Projects/SET-Game/cmake-build-debug/CMakeFiles/SET2.dir/Tools.cpp.o"
+  "/home/firgaty/Prog/Projects/SET-Game/main.cpp" "/home/firgaty/Prog/Projects/SET-Game/cmake-build-debug/CMakeFiles/SET2.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

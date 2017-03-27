@@ -43,10 +43,10 @@ RM = /opt/clion/bin/cmake/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/firgaty/Prog/Cpp/SET-Game
+CMAKE_SOURCE_DIR = /home/firgaty/Prog/Projects/SET-Game
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/firgaty/Prog/Cpp/SET-Game/cmake-build-debug
+CMAKE_BINARY_DIR = /home/firgaty/Prog/Projects/SET-Game/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/SET2.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/SET2.dir/flags.make
 
 CMakeFiles/SET2.dir/main.cpp.o: CMakeFiles/SET2.dir/flags.make
 CMakeFiles/SET2.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/firgaty/Prog/Cpp/SET-Game/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/SET2.dir/main.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SET2.dir/main.cpp.o -c /home/firgaty/Prog/Cpp/SET-Game/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/firgaty/Prog/Projects/SET-Game/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/SET2.dir/main.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SET2.dir/main.cpp.o -c /home/firgaty/Prog/Projects/SET-Game/main.cpp
 
 CMakeFiles/SET2.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SET2.dir/main.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/firgaty/Prog/Cpp/SET-Game/main.cpp > CMakeFiles/SET2.dir/main.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/firgaty/Prog/Projects/SET-Game/main.cpp > CMakeFiles/SET2.dir/main.cpp.i
 
 CMakeFiles/SET2.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SET2.dir/main.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/firgaty/Prog/Cpp/SET-Game/main.cpp -o CMakeFiles/SET2.dir/main.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/firgaty/Prog/Projects/SET-Game/main.cpp -o CMakeFiles/SET2.dir/main.cpp.s
 
 CMakeFiles/SET2.dir/main.cpp.o.requires:
 
@@ -83,16 +83,16 @@ CMakeFiles/SET2.dir/main.cpp.o.provides.build: CMakeFiles/SET2.dir/main.cpp.o
 
 CMakeFiles/SET2.dir/Game.cpp.o: CMakeFiles/SET2.dir/flags.make
 CMakeFiles/SET2.dir/Game.cpp.o: ../Game.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/firgaty/Prog/Cpp/SET-Game/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/SET2.dir/Game.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SET2.dir/Game.cpp.o -c /home/firgaty/Prog/Cpp/SET-Game/Game.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/firgaty/Prog/Projects/SET-Game/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/SET2.dir/Game.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SET2.dir/Game.cpp.o -c /home/firgaty/Prog/Projects/SET-Game/Game.cpp
 
 CMakeFiles/SET2.dir/Game.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SET2.dir/Game.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/firgaty/Prog/Cpp/SET-Game/Game.cpp > CMakeFiles/SET2.dir/Game.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/firgaty/Prog/Projects/SET-Game/Game.cpp > CMakeFiles/SET2.dir/Game.cpp.i
 
 CMakeFiles/SET2.dir/Game.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SET2.dir/Game.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/firgaty/Prog/Cpp/SET-Game/Game.cpp -o CMakeFiles/SET2.dir/Game.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/firgaty/Prog/Projects/SET-Game/Game.cpp -o CMakeFiles/SET2.dir/Game.cpp.s
 
 CMakeFiles/SET2.dir/Game.cpp.o.requires:
 
@@ -107,16 +107,16 @@ CMakeFiles/SET2.dir/Game.cpp.o.provides.build: CMakeFiles/SET2.dir/Game.cpp.o
 
 CMakeFiles/SET2.dir/Card.cpp.o: CMakeFiles/SET2.dir/flags.make
 CMakeFiles/SET2.dir/Card.cpp.o: ../Card.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/firgaty/Prog/Cpp/SET-Game/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/SET2.dir/Card.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SET2.dir/Card.cpp.o -c /home/firgaty/Prog/Cpp/SET-Game/Card.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/firgaty/Prog/Projects/SET-Game/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/SET2.dir/Card.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SET2.dir/Card.cpp.o -c /home/firgaty/Prog/Projects/SET-Game/Card.cpp
 
 CMakeFiles/SET2.dir/Card.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SET2.dir/Card.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/firgaty/Prog/Cpp/SET-Game/Card.cpp > CMakeFiles/SET2.dir/Card.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/firgaty/Prog/Projects/SET-Game/Card.cpp > CMakeFiles/SET2.dir/Card.cpp.i
 
 CMakeFiles/SET2.dir/Card.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SET2.dir/Card.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/firgaty/Prog/Cpp/SET-Game/Card.cpp -o CMakeFiles/SET2.dir/Card.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/firgaty/Prog/Projects/SET-Game/Card.cpp -o CMakeFiles/SET2.dir/Card.cpp.s
 
 CMakeFiles/SET2.dir/Card.cpp.o.requires:
 
@@ -131,16 +131,16 @@ CMakeFiles/SET2.dir/Card.cpp.o.provides.build: CMakeFiles/SET2.dir/Card.cpp.o
 
 CMakeFiles/SET2.dir/Tools.cpp.o: CMakeFiles/SET2.dir/flags.make
 CMakeFiles/SET2.dir/Tools.cpp.o: ../Tools.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/firgaty/Prog/Cpp/SET-Game/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/SET2.dir/Tools.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SET2.dir/Tools.cpp.o -c /home/firgaty/Prog/Cpp/SET-Game/Tools.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/firgaty/Prog/Projects/SET-Game/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/SET2.dir/Tools.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SET2.dir/Tools.cpp.o -c /home/firgaty/Prog/Projects/SET-Game/Tools.cpp
 
 CMakeFiles/SET2.dir/Tools.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SET2.dir/Tools.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/firgaty/Prog/Cpp/SET-Game/Tools.cpp > CMakeFiles/SET2.dir/Tools.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/firgaty/Prog/Projects/SET-Game/Tools.cpp > CMakeFiles/SET2.dir/Tools.cpp.i
 
 CMakeFiles/SET2.dir/Tools.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SET2.dir/Tools.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/firgaty/Prog/Cpp/SET-Game/Tools.cpp -o CMakeFiles/SET2.dir/Tools.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/firgaty/Prog/Projects/SET-Game/Tools.cpp -o CMakeFiles/SET2.dir/Tools.cpp.s
 
 CMakeFiles/SET2.dir/Tools.cpp.o.requires:
 
@@ -155,16 +155,16 @@ CMakeFiles/SET2.dir/Tools.cpp.o.provides.build: CMakeFiles/SET2.dir/Tools.cpp.o
 
 CMakeFiles/SET2.dir/Deck.cpp.o: CMakeFiles/SET2.dir/flags.make
 CMakeFiles/SET2.dir/Deck.cpp.o: ../Deck.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/firgaty/Prog/Cpp/SET-Game/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/SET2.dir/Deck.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SET2.dir/Deck.cpp.o -c /home/firgaty/Prog/Cpp/SET-Game/Deck.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/firgaty/Prog/Projects/SET-Game/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/SET2.dir/Deck.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/SET2.dir/Deck.cpp.o -c /home/firgaty/Prog/Projects/SET-Game/Deck.cpp
 
 CMakeFiles/SET2.dir/Deck.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/SET2.dir/Deck.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/firgaty/Prog/Cpp/SET-Game/Deck.cpp > CMakeFiles/SET2.dir/Deck.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/firgaty/Prog/Projects/SET-Game/Deck.cpp > CMakeFiles/SET2.dir/Deck.cpp.i
 
 CMakeFiles/SET2.dir/Deck.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/SET2.dir/Deck.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/firgaty/Prog/Cpp/SET-Game/Deck.cpp -o CMakeFiles/SET2.dir/Deck.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/firgaty/Prog/Projects/SET-Game/Deck.cpp -o CMakeFiles/SET2.dir/Deck.cpp.s
 
 CMakeFiles/SET2.dir/Deck.cpp.o.requires:
 
@@ -195,7 +195,7 @@ SET2: CMakeFiles/SET2.dir/Tools.cpp.o
 SET2: CMakeFiles/SET2.dir/Deck.cpp.o
 SET2: CMakeFiles/SET2.dir/build.make
 SET2: CMakeFiles/SET2.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/firgaty/Prog/Cpp/SET-Game/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable SET2"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/firgaty/Prog/Projects/SET-Game/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable SET2"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/SET2.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -216,6 +216,6 @@ CMakeFiles/SET2.dir/clean:
 .PHONY : CMakeFiles/SET2.dir/clean
 
 CMakeFiles/SET2.dir/depend:
-	cd /home/firgaty/Prog/Cpp/SET-Game/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/firgaty/Prog/Cpp/SET-Game /home/firgaty/Prog/Cpp/SET-Game /home/firgaty/Prog/Cpp/SET-Game/cmake-build-debug /home/firgaty/Prog/Cpp/SET-Game/cmake-build-debug /home/firgaty/Prog/Cpp/SET-Game/cmake-build-debug/CMakeFiles/SET2.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/firgaty/Prog/Projects/SET-Game/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/firgaty/Prog/Projects/SET-Game /home/firgaty/Prog/Projects/SET-Game /home/firgaty/Prog/Projects/SET-Game/cmake-build-debug /home/firgaty/Prog/Projects/SET-Game/cmake-build-debug /home/firgaty/Prog/Projects/SET-Game/cmake-build-debug/CMakeFiles/SET2.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/SET2.dir/depend
 

@@ -73,6 +73,7 @@ int main(int argc, char **argv)
 //                  << "    Erased : " << moyennesErased->at(i) << "\n" << std::endl;
 //    }
 
+    Deck *deck4 = new Deck(4,3,false);
 
     return 0;
 }
